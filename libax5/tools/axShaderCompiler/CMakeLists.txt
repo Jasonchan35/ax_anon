@@ -8,6 +8,6 @@ set_target_properties (${PROJECT_NAME} PROPERTIES FOLDER "libax/tools")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC ax_render)
 
-find_package(directx-dxc CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Microsoft::DirectXShaderCompiler)
+# find_package(directx-dxc CONFIG REQUIRED)
+# target_link_libraries(${PROJECT_NAME} PRIVATE Microsoft::DirectXShaderCompiler)
 

@@ -28,7 +28,7 @@ axDX12Renderer::axDX12Renderer(CreateDesc& desc)
 	hr = D3D12GetDebugInterface(IID_PPV_ARGS(_d3dDebug.ptrForInit()));
 	Util::throwIfError(hr);
 
-	// Enable the debug layer (requires the Graphics Tools "optional feature").
+	// Enable the debug layer (requires the Graphics Tools "optional feature" from Windows Settings > System > Optional features).
 	// NOTE: Enabling the debug layer after device creation will invalidate the active device.
 	_d3dDebug->EnableDebugLayer();
 	dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;

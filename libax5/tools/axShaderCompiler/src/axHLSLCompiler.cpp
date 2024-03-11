@@ -114,7 +114,7 @@ void axHLSLCompiler::compile(axStrView outFilename, axStrView filename_, axStrVi
 	UINT flags2 = 0;
 
 #if _DEBUG
-	//flags1 |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+	flags1 |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
 
 	auto hr = D3DCompile2(	hlsl.data(), hlsl.size(), filename.c_str(),

@@ -40,8 +40,10 @@ endif
 
 ifeq ($(AX_PLATFORM_OS), Windows)
 	ax_tools_bin = $(realpath ../../bin/x64-windows/Debug)
-	windows_sdk_bin = C:/Program Files (x86)/Windows Kits/10/bin/10.0.18362.0/x64
 	vulkan_sdk_bin  = C:/VulkanSDK/1.2.198.1/Bin
+
+# DXIL.dll needs win sdk
+	windows_sdk_bin = C:/Program Files (x86)/Windows Kits/10/bin/10.0.22621.0/x64
 
 	exe_suffix=.exe
 	export exe_suffix

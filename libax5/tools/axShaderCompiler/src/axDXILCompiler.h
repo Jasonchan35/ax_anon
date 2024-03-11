@@ -6,9 +6,8 @@
 
 #if AX_OS_WINDOWS
 	using axWinBOOL = BOOL;
-//	#include <dxcapi.h> // from Windows SDK
+	#include <dxcapi.h> // from Windows SDK
 //	#include <dxc/dxcapi.h> // from Vulkan SDK
-	#include <dxcapi.h> // from vcpkg directx-dxc
 	#include <d3d12shader.h>
 	#pragma comment(lib, "dxcompiler.lib")
 #else

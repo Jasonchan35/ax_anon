@@ -181,9 +181,12 @@ void axDX12ShaderPass::_createComputePipelineState(Pso& outPso) {
 	auto* d3dDevice = Util::d3dDevice();
 
 	D3D12_COMPUTE_PIPELINE_STATE_DESC psoDesc = {};
-	psoDesc.pRootSignature		= _rootSignature;
-	psoDesc.CS.pShaderBytecode	= _csBytecode.data();
-	psoDesc.CS.BytecodeLength	= _csBytecode.sizeInBytes();
+	psoDesc.pRootSignature			= _rootSignature;
+	psoDesc.CS.pShaderBytecode		= _csBytecode.data();
+	psoDesc.CS.BytecodeLength		= _csBytecode.sizeInBytes();
+//	psoDesc.CachedPSO.pCachedBlob	= nullptr;
+//	psoDesc.CachedPSO.CachedBlobSizeInBytes = 0;
+//	psoDesc.Flags = D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG;
 
 	auto hr = d3dDevice->CreateComputePipelineState(&psoDesc, IID_PPV_ARGS(outPso.ptrForInit()));
 	Util::throwIfError(hr);
