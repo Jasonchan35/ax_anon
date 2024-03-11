@@ -1,0 +1,5 @@
+DX12_pass0.ps_6_0.bin:\
+	source.hlsl\
+	./../../../builtIn\../common/ax_render.hlsl\
+	./../../../builtIn\../common/testing.hlsl\
+

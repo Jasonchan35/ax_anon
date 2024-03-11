@@ -1,0 +1,46 @@
+{
+  "profile": "ps_6_0", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "", 
+      "attrId": "SV_POSITION0", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "", 
+      "attrId": "COLOR0", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "", 
+      "attrId": "TEXCOORD0", 
+      "dataType": "Float32x2"
+    }, {
+      "name": "", 
+      "attrId": "TEXCOORD1", 
+      "dataType": "Float32x2"
+    }], 
+  "params": [], 
+  "uniformBuffers": [], 
+  "textures": [{
+      "name": "mainTex0", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataType": "Texture2D"
+    }, {
+      "name": "mainTex1", 
+      "bindPoint": 1, 
+      "bindCount": 1, 
+      "dataType": "Texture2D"
+    }], 
+  "samplers": [{
+      "name": "_axSamplerState_mainTex0", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataType": "Unknown"
+    }, {
+      "name": "_axSamplerState_mainTex1", 
+      "bindPoint": 1, 
+      "bindCount": 1, 
+      "dataType": "Unknown"
+    }], 
+  "storageBuffers": []
+}

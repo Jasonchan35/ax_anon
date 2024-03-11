@@ -12,13 +12,41 @@
 float3 axColor_Linear_to_sRGB_approximation(float3 x) { return pow(x, 1 / 2.2); }
 float3 axColor_sRGB_to_Linear_approximation(float3 x) { return pow(x, 2.2); }
 
-float3 axColor_sRGB_to_Linear_accurate(float3 x) { return x < 0.04045 ? x / 12.92 : pow( (x + 0.055) / 1.055, 2.4 ); }
-float3 axColor_Linear_to_sRGB_accurate(float3 x) { return x < 0.0031308 ? 12.92 * x : 1.055 * pow(x, 1.0 / 2.4) - 0.055; }
+float  axColor_sRGB_to_Linear_accurate(float  x) {
+	return x < 0.04045 ? x / 12.92 : pow( (x + 0.055) / 1.055, 2.4 );
+}
+
+float3 axColor_sRGB_to_Linear_accurate(float3 x) {
+	float3 cutoff = step(0.04045, x);
+	return lerp(x / 12.92, pow((x + 0.055) / 1.055, 2.4), cutoff);
+}
+
+float  axColor_Linear_to_sRGB_accurate(float  x) {
+	return x < 0.0031308 ? 12.92 * x : 1.055 * pow(x, 1.0 / 2.4) - 0.055;
+}
+
+float3 axColor_Linear_to_sRGB_accurate(float3 x) {
+	float3 cutoff = step(0.0031308, x);
+	return lerp(12.92 * x, 1.055 * pow(x, 1.0 / 2.4) - 0.055, cutoff);
+}
 
 // These functions avoid pow() to efficiently approximate sRGB with an error < 0.4%.
-float3 axColor_Linear_to_sRGB_fast(float3 x) { return x < 0.0031308 ? 12.92 * x : 1.13005 * sqrt(x - 0.00228) - 0.13448 * x + 0.005719; }
-float3 axColor_sRGB_to_Linear_fast(float3 x) { return x < 0.04045 ? x / 12.92 : -7.43605 * x - 31.24297 * sqrt(-0.53792 * x + 1.279924) + 35.34864; }
+float  axColor_Linear_to_sRGB_fast(float  x) {
+	return x < 0.0031308 ? 12.92 * x : 1.13005 * sqrt(x - 0.00228) - 0.13448 * x + 0.005719;
+}
 
+float3 axColor_Linear_to_sRGB_fast(float3 x) {
+	float3 cutoff = step(0.0031308, x);
+	return lerp(12.92 * x, 1.13005 * sqrt(x - 0.00228) - 0.13448 * x + 0.005719, cutoff);
+}
+
+float  axColor_sRGB_to_Linear_fast(float  x) {
+	return x < 0.04045 ? x / 12.92 : -7.43605 * x - 31.24297 * sqrt(-0.53792 * x + 1.279924) + 35.34864;
+}
+float3 axColor_sRGB_to_Linear_fast(float3 x) {
+	float3 cutoff = step(0.04045, x);
+	return lerp(x / 12.92, -7.43605 * x - 31.24297 * sqrt(-0.53792 * x + 1.279924) + 35.34864, cutoff);
+}
 
 float3 axColor_Linear_to_sRGB(float3 x) { return axColor_Linear_to_sRGB_fast(x); }
 float3 axColor_sRGB_to_Linear(float3 x) { return axColor_sRGB_to_Linear_fast(x); }

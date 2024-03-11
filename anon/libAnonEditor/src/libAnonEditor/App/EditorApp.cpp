@@ -40,7 +40,7 @@ EditorApp::EditorApp() {
 //	axProfiler::s_instance()->enableDebugPort();
 
 #if AX_OS_WINDOWS
-	setRenderApi(axRenderApi::DX11, false);
+//	setRenderApi(axRenderApi::DX11, false);
 //	setRenderApi(axRenderApi::DX12, false);
 //	setRenderApi(axRenderApi::OpenGL, false);
 //	setRenderApi(axRenderApi::Vulkan, false);

@@ -1,0 +1,28 @@
+{
+  "profile": "ps_6_0", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "", 
+      "attrId": "SV_POSITION0", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "", 
+      "attrId": "COLOR0", 
+      "dataType": "Float32x4"
+    }], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Globals", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataSize": 80, 
+      "variables": [{
+          "name": "color", 
+          "offset": 64, 
+          "dataType": "Float32x4"
+        }]
+    }], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": []
+}
