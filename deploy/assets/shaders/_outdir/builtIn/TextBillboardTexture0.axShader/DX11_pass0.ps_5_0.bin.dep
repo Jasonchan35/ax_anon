@@ -1,0 +1,4 @@
+DX11_pass0.ps_5_0.bin:\
+	../../../builtIn/../common/ax_render.hlsl\
+	../../../builtIn/../common/testing.hlsl\
+

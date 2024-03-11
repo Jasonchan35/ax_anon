@@ -1,0 +1,24 @@
+{
+  "profile": "vs_5_0", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "", 
+      "attrId": "POSITION0", 
+      "dataType": "Float32x4"
+    }], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Globals", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataSize": 64, 
+      "variables": [{
+          "name": "matMvp", 
+          "offset": 0, 
+          "dataType": "Float32_4x4"
+        }]
+    }], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": []
+}

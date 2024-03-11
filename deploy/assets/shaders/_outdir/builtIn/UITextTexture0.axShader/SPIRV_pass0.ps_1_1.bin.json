@@ -1,0 +1,28 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.uv", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x2"
+    }], 
+  "params": [], 
+  "uniformBuffers": [], 
+  "textures": [{
+      "name": "glyphTex", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "Texture2D"
+    }], 
+  "samplers": [{
+      "name": "_axSamplerState_glyphTex", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "SamplerState"
+    }], 
+  "storageBuffers": []
+}

@@ -1,0 +1,14 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }], 
+  "params": [], 
+  "uniformBuffers": [], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": []
+}

@@ -1,0 +1,32 @@
+{
+  "profile": "ps_5_0", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "", 
+      "attrId": "SV_POSITION0", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "", 
+      "attrId": "COLOR0", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "", 
+      "attrId": "TEXCOORD0", 
+      "dataType": "Float32x2"
+    }], 
+  "params": [], 
+  "uniformBuffers": [], 
+  "textures": [{
+      "name": "glyphTex", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataType": "Texture2D"
+    }], 
+  "samplers": [{
+      "name": "_axSamplerState_glyphTex", 
+      "bindPoint": 0, 
+      "bindCount": 1, 
+      "dataType": "Unknown"
+    }], 
+  "storageBuffers": []
+}

@@ -1,0 +1,50 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "ps_main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_15" : {
+            "name" : "$Global",
+            "members" : [
+                {
+                    "name" : "matMvp",
+                    "type" : "mat4",
+                    "offset" : 0,
+                    "matrix_stride" : 16,
+                    "row_major" : true
+                },
+                {
+                    "name" : "color",
+                    "type" : "vec4",
+                    "offset" : 64
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "i.color",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "@entryPointOutput",
+            "location" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_15",
+            "name" : "$Global",
+            "block_size" : 80,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

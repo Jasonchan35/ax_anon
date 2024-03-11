@@ -1,0 +1,29 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [6, 1, 1], 
+  "inputs": [], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Global", 
+      "bindPoint": 0, 
+      "bindCount": 0, 
+      "dataSize": 16, 
+      "variables": [{
+          "name": "cellSize", 
+          "offset": 0, 
+          "dataType": "Float32"
+        }, {
+          "name": "gridSize", 
+          "offset": 8, 
+          "dataType": "Int32x2"
+        }]
+    }], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": [{
+      "name": "BufferOut", 
+      "bindPoint": 4, 
+      "bindCount": 0, 
+      "rawUAV": false
+    }]
+}

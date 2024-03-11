@@ -1,0 +1,148 @@
+{
+  "objects": [{
+      "__name__": "cornell", 
+      "__components__": [{
+          "__type__": "SCN_Geometry", 
+          "__name__": "", 
+          "diagram": {
+            "nodes": [{
+                "__type__": "GEO_WaveFrontObj", 
+                "__name__": "GEO_WaveFrontObj", 
+                "__diaPos__": [20, 20], 
+                "filename": "models\/wavefront_obj\/cornell.obj"
+              }], 
+            "connections": [], 
+            "outputNode": "GEO_WaveFrontObj"
+          }
+        }], 
+      "translate": [-7.3173, 201.684, -52.3906], 
+      "rotate": [0, 0, 0], 
+      "scale": [200, 200, 200]
+    }, {
+      "__name__": "Group1", 
+      "__children__": [{
+          "__name__": "Geometry", 
+          "__components__": [{
+              "__type__": "SCN_Geometry", 
+              "__name__": "", 
+              "diagram": {
+                "nodes": [{
+                    "__type__": "GEO_Cube", 
+                    "__name__": "Cube1", 
+                    "__diaPos__": [580, 20], 
+                    "center": [0, 0, 0], 
+                    "size": [80, 80, 80]
+                  }, {
+                    "__type__": "GEO_Grid", 
+                    "__name__": "Grid1", 
+                    "__diaPos__": [20, 80], 
+                    "center": [0, 0, 0], 
+                    "size": [100, 100], 
+                    "div": [2, 200]
+                  }, {
+                    "__type__": "GEO_Bend", 
+                    "__name__": "Bend1", 
+                    "__diaPos__": [300, 120], 
+                    "angle": 42.8, 
+                    "origin": [0, 0, -20.8], 
+                    "direction": [0, 0, 1], 
+                    "upVector": [0, 1, 0], 
+                    "length": 27
+                  }, {
+                    "__type__": "GEO_Transform", 
+                    "__name__": "Transform2", 
+                    "__diaPos__": [820, 140], 
+                    "translate": [2.2, -0.6, 77], 
+                    "rotate": [22.2, 79.4, 20.6], 
+                    "scale": [1, 1, 1]
+                  }, {
+                    "__type__": "GEO_Merge", 
+                    "__name__": "Merge1", 
+                    "__diaPos__": [1200, 40]
+                  }, {
+                    "__type__": "GEO_Subdiv", 
+                    "__name__": "Subdiv1", 
+                    "__diaPos__": [880, 60], 
+                    "level": 4
+                  }], 
+                "connections": [{
+                    "from": "Grid1.output", 
+                    "to": "Bend1.input"
+                  }, {
+                    "from": "Bend1.output", 
+                    "to": "Transform2.input"
+                  }, {
+                    "from": "Bend1.output", 
+                    "to": "Transform2.rotate"
+                  }, {
+                    "from": "Subdiv1.output", 
+                    "to": "Merge1.input"
+                  }, {
+                    "from": "Transform2.output", 
+                    "to": "Merge1.input2"
+                  }, {
+                    "from": "Cube1.output", 
+                    "to": "Subdiv1.input"
+                  }], 
+                "outputNode": "Transform2"
+              }
+            }], 
+          "translate": [-36.587, 53.1277, 132.86], 
+          "rotate": [0, -161.8, 0], 
+          "scale": [1, 1, 1]
+        }, {
+          "__name__": "WaveFrontObj", 
+          "__components__": [{
+              "__type__": "SCN_Geometry", 
+              "__name__": "", 
+              "diagram": {
+                "nodes": [{
+                    "__type__": "DiaNode", 
+                    "__name__": "Terrain1", 
+                    "__diaPos__": [0, 0]
+                  }, {
+                    "__type__": "GEO_WaveFrontObj", 
+                    "__name__": "GEO_WaveFrontObj", 
+                    "__diaPos__": [540, 60], 
+                    "filename": "models\/wavefront_obj\/bunny.obj"
+                  }, {
+                    "__type__": "GEO_Node", 
+                    "__name__": "GEO_Node", 
+                    "__diaPos__": [640, 160]
+                  }, {
+                    "__type__": "GEO_Subdiv", 
+                    "__name__": "GEO_Subdiv", 
+                    "__diaPos__": [980, 80], 
+                    "level": 2
+                  }], 
+                "connections": [{
+                    "from": "GEO_WaveFrontObj.output", 
+                    "to": "GEO_Subdiv.input"
+                  }], 
+                "outputNode": "GEO_Subdiv"
+              }
+            }], 
+          "translate": [-74.4114, 0.158321, 0], 
+          "rotate": [0, 0, 0], 
+          "scale": [100, 100, 100]
+        }], 
+      "translate": [0, 0, 0], 
+      "rotate": [0, 30.8, 0], 
+      "scale": [1, 1, 1]
+    }, {
+      "__name__": "Point Light", 
+      "__components__": [{
+          "__type__": "SCN_PointLight", 
+          "__name__": "", 
+          "lightPower": 5000, 
+          "lightColor": {
+            "r": 1, 
+            "g": 1, 
+            "b": 1
+          }
+        }], 
+      "translate": [21.8374, 164.656, 94.8734], 
+      "rotate": [0, 0, 0], 
+      "scale": [1, 1, 1]
+    }]
+}

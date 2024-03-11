@@ -1,0 +1,9 @@
+{
+	"cmake.configureOnOpen": false,
+	"files.associations": {
+		"*.axproj": "json",
+		"*.axworkspace": "json",
+		"*.AnonScene": "json",
+		"*.axShader": "hlsl"
+	}	
+}

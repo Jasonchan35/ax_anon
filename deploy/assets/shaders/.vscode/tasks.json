@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"echoCommand": true,
+
+    "windows": {
+        "command": "call",
+        //"args": ["compile_hlsl.bat"]
+        //"args": ["compile_glsl.bat"]
+        "args": ["make.bat"]
+    },
+    "linux": {
+        "command": "make",
+        //"args": ["-j"]
+    },
+    "osx": {
+        "command": "make",
+        //"args": ["-j"]
+    },
+    "tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"problemMatcher": [],
+			"group": {
+				"_id": "build",
+				"isDefault": false
+			}
+		}
+	]
+}

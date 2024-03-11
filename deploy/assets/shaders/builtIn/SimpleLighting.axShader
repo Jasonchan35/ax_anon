@@ -1,0 +1,70 @@
+Shader {
+	Properties {
+	}
+
+	Pass "Pass0" {
+		//Queue		"Transparent"
+		//Cull		None
+		//Wireframe true
+
+		BlendRGB 	Add One OneMinusSrcAlpha
+		BlendAlpha	Add One OneMinusSrcAlpha
+
+		DepthTest	Less
+
+		VsFunc		vs_main
+		PsFunc		ps_main
+	}
+}
+
+#include "../common/ax_render.hlsl"
+
+float4x4	matMvp;
+float4		color;
+float3		cameraPos;
+float3		lightPos;
+
+float4		ambient;
+float4		diffuse;
+float4		specular;
+float		shininess;
+
+struct VS_Input {
+	float4 pos : POSITION0;
+	float4 color : COLOR0;
+	float3 normal : NORMAL0;
+};
+
+struct PS_Input {
+	float4 pos : SV_POSITION;
+	float3 worldPos : POSITION0;
+	float4 color : COLOR0;
+	float3 normal : NORMAL0;
+};
+
+PS_Input vs_main(VS_Input i) {
+	PS_Input o;
+	o.pos = mul(i.pos, matMvp);
+	o.worldPos = i.pos.xyz;
+	o.color = color * i.color;
+	o.normal = i.normal;
+	return o;
+}
+
+float4 ps_main(PS_Input i) : SV_Target {
+	//return float4(i.normal,1);
+
+	float3 normal   = normalize(i.normal);
+	float3 lightDir = normalize(lightPos - i.worldPos);
+	float3 eyeDir   = normalize(cameraPos - i.worldPos);
+
+	float3 halfway = normalize(lightDir + eyeDir);
+	
+	float4 a = ambient;
+	float4 d = diffuse * saturate(dot(normal, lightDir));
+	float4 s = specular * pow(saturate(dot(normal, halfway)), shininess);
+
+	float4 o = a + d + s;
+
+	return o * i.color;
+}

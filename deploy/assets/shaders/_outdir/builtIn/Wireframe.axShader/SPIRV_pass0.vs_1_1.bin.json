@@ -1,0 +1,32 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.pos", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Global", 
+      "bindPoint": 0, 
+      "bindCount": 0, 
+      "dataSize": 80, 
+      "variables": [{
+          "name": "matMvp", 
+          "offset": 0, 
+          "dataType": "Float32_4x4"
+        }, {
+          "name": "color", 
+          "offset": 64, 
+          "dataType": "Float32x4"
+        }]
+    }], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": []
+}

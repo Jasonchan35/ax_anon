@@ -1,0 +1,42 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.uv0", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x2"
+    }, {
+      "name": "i.uv1", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x2"
+    }], 
+  "params": [], 
+  "uniformBuffers": [], 
+  "textures": [{
+      "name": "mainTex0", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "Texture2D"
+    }, {
+      "name": "mainTex1", 
+      "bindPoint": 9, 
+      "bindCount": 0, 
+      "dataType": "Texture2D"
+    }], 
+  "samplers": [{
+      "name": "_axSamplerState_mainTex0", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "SamplerState"
+    }, {
+      "name": "_axSamplerState_mainTex1", 
+      "bindPoint": 9, 
+      "bindCount": 0, 
+      "dataType": "SamplerState"
+    }], 
+  "storageBuffers": []
+}

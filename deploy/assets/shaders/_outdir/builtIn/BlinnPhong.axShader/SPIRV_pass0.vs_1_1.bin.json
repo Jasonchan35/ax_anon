@@ -1,0 +1,68 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.pos", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.normal", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x3"
+    }], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Global", 
+      "bindPoint": 0, 
+      "bindCount": 0, 
+      "dataSize": 224, 
+      "variables": [{
+          "name": "matMvp", 
+          "offset": 0, 
+          "dataType": "Float32_4x4"
+        }, {
+          "name": "matObjectToWorld", 
+          "offset": 64, 
+          "dataType": "Float32_4x4"
+        }, {
+          "name": "cameraPos", 
+          "offset": 128, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "lightPos", 
+          "offset": 144, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "lightPower", 
+          "offset": 156, 
+          "dataType": "Float32"
+        }, {
+          "name": "lightColor", 
+          "offset": 160, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "ambient", 
+          "offset": 176, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "diffuse", 
+          "offset": 192, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "specular", 
+          "offset": 208, 
+          "dataType": "Float32x3"
+        }, {
+          "name": "shininess", 
+          "offset": 220, 
+          "dataType": "Float32"
+        }]
+    }], 
+  "textures": [], 
+  "samplers": [], 
+  "storageBuffers": []
+}

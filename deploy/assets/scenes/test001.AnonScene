@@ -1,0 +1,52 @@
+{
+  "objects": [{
+      "name": "testing"
+    }, {
+      "name": "Group001", 
+      "children": [{
+          "name": "Cube", 
+          "components": [{
+              "__type__": "SCN_Geometry", 
+              "__name__": "", 
+              "diagram": {
+                "nodes": [{
+                    "__type__": "GEO_Cube", 
+                    "__name__": "Cube1", 
+                    "center": [0, 0, 0], 
+                    "size": [101, 102, 103]
+                  }, {
+                    "__type__": "GEO_Cube", 
+                    "__name__": "Cube2", 
+                    "center": [0, 0, 0], 
+                    "size": [50, 200, 50]
+                  }, {
+                    "__type__": "GEO_TransformNode", 
+                    "__name__": "Transform1", 
+                    "translate": [0, 0, 0], 
+                    "rotate": [45, 0, 45], 
+                    "scale": [1, 1, 1], 
+                    "matrix": {
+                      "cx": [1, 0, 0, 0], 
+                      "cy": [0, 1, 0, 0], 
+                      "cz": [0, 0, 1, 0], 
+                      "cw": [0, 0, 0, 1]
+                    }
+                  }], 
+                "outputNode": "Cube1"
+              }
+            }]
+        }, {
+          "name": "Terrain", 
+          "components": [{
+              "__type__": "SCN_Geometry", 
+              "__name__": "", 
+              "diagram": {
+                "nodes": [{
+                    "__type__": "DiaNode", 
+                    "__name__": "Terrain1"
+                  }]
+              }
+            }]
+        }]
+    }]
+}

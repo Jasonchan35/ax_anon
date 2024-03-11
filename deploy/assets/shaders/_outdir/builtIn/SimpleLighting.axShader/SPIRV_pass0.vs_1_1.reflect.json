@@ -1,0 +1,100 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "vs_main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_21" : {
+            "name" : "$Global",
+            "members" : [
+                {
+                    "name" : "matMvp",
+                    "type" : "mat4",
+                    "offset" : 0,
+                    "matrix_stride" : 16,
+                    "row_major" : true
+                },
+                {
+                    "name" : "color",
+                    "type" : "vec4",
+                    "offset" : 64
+                },
+                {
+                    "name" : "cameraPos",
+                    "type" : "vec3",
+                    "offset" : 80
+                },
+                {
+                    "name" : "lightPos",
+                    "type" : "vec3",
+                    "offset" : 96
+                },
+                {
+                    "name" : "ambient",
+                    "type" : "vec4",
+                    "offset" : 112
+                },
+                {
+                    "name" : "diffuse",
+                    "type" : "vec4",
+                    "offset" : 128
+                },
+                {
+                    "name" : "specular",
+                    "type" : "vec4",
+                    "offset" : 144
+                },
+                {
+                    "name" : "shininess",
+                    "type" : "float",
+                    "offset" : 160
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "i.pos",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "i.color",
+            "location" : 1
+        },
+        {
+            "type" : "vec3",
+            "name" : "i.normal",
+            "location" : 2
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec3",
+            "name" : "@entryPointOutput.worldPos",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "@entryPointOutput.color",
+            "location" : 1
+        },
+        {
+            "type" : "vec3",
+            "name" : "@entryPointOutput.normal",
+            "location" : 2
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_21",
+            "name" : "$Global",
+            "block_size" : 164,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

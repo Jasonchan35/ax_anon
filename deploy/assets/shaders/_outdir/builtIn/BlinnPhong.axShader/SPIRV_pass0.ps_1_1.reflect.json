@@ -1,0 +1,102 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "ps_main",
+            "mode" : "frag"
+        }
+    ],
+    "types" : {
+        "_77" : {
+            "name" : "$Global",
+            "members" : [
+                {
+                    "name" : "matMvp",
+                    "type" : "mat4",
+                    "offset" : 0,
+                    "matrix_stride" : 16,
+                    "row_major" : true
+                },
+                {
+                    "name" : "matObjectToWorld",
+                    "type" : "mat4",
+                    "offset" : 64,
+                    "matrix_stride" : 16,
+                    "row_major" : true
+                },
+                {
+                    "name" : "cameraPos",
+                    "type" : "vec3",
+                    "offset" : 128
+                },
+                {
+                    "name" : "lightPos",
+                    "type" : "vec3",
+                    "offset" : 144
+                },
+                {
+                    "name" : "lightPower",
+                    "type" : "float",
+                    "offset" : 156
+                },
+                {
+                    "name" : "lightColor",
+                    "type" : "vec3",
+                    "offset" : 160
+                },
+                {
+                    "name" : "ambient",
+                    "type" : "vec3",
+                    "offset" : 176
+                },
+                {
+                    "name" : "diffuse",
+                    "type" : "vec3",
+                    "offset" : 192
+                },
+                {
+                    "name" : "specular",
+                    "type" : "vec3",
+                    "offset" : 208
+                },
+                {
+                    "name" : "shininess",
+                    "type" : "float",
+                    "offset" : 220
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec3",
+            "name" : "i.worldPos",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "i.color",
+            "location" : 1
+        },
+        {
+            "type" : "vec3",
+            "name" : "i.normal",
+            "location" : 2
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "@entryPointOutput",
+            "location" : 0
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_77",
+            "name" : "$Global",
+            "block_size" : 224,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

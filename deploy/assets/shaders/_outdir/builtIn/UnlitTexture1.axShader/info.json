@@ -1,0 +1,36 @@
+{
+  "props": [{
+      "name": "mainTex0", 
+      "propType": "Texture2D", 
+      "displayName": "Texture 0", 
+      "defaultValue": "0,0,0,0"
+    }], 
+  "passes": [{
+      "name": "Pass0", 
+      "vsFunc": "vs_main", 
+      "psFunc": "ps_main", 
+      "csFunc": "", 
+      "renderState": {
+        "cull": "None", 
+        "blend": {
+          "rgb": {
+            "op": "Add", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "alpha": {
+            "op": "Add", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "constColor": [0, 0, 0, 0]
+        }, 
+        "depthTest": {
+          "op": "Less", 
+          "writeMask": true
+        }, 
+        "antialiasedLine": false, 
+        "wireframe": false
+      }
+    }]
+}

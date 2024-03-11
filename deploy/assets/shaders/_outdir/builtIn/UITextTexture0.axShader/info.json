@@ -1,0 +1,36 @@
+{
+  "props": [{
+      "name": "glyphTex", 
+      "propType": "Texture2D", 
+      "displayName": "Glyph Texture", 
+      "defaultValue": "0,0,0,0"
+    }], 
+  "passes": [{
+      "name": "Pass0", 
+      "vsFunc": "vs_main", 
+      "psFunc": "ps_main", 
+      "csFunc": "", 
+      "renderState": {
+        "cull": "None", 
+        "blend": {
+          "rgb": {
+            "op": "Add", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "alpha": {
+            "op": "Add", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "constColor": [0, 0, 0, 0]
+        }, 
+        "depthTest": {
+          "op": "Always", 
+          "writeMask": false
+        }, 
+        "antialiasedLine": false, 
+        "wireframe": false
+      }
+    }]
+}

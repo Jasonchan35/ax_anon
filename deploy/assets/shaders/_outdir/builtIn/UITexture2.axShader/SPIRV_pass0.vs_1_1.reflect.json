@@ -1,0 +1,75 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "vs_main",
+            "mode" : "vert"
+        }
+    ],
+    "types" : {
+        "_21" : {
+            "name" : "$Global",
+            "members" : [
+                {
+                    "name" : "matMvp",
+                    "type" : "mat4",
+                    "offset" : 0,
+                    "matrix_stride" : 16,
+                    "row_major" : true
+                },
+                {
+                    "name" : "color",
+                    "type" : "vec4",
+                    "offset" : 64
+                }
+            ]
+        }
+    },
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "i.pos",
+            "location" : 0
+        },
+        {
+            "type" : "vec4",
+            "name" : "i.color",
+            "location" : 1
+        },
+        {
+            "type" : "vec2",
+            "name" : "i.uv0",
+            "location" : 2
+        },
+        {
+            "type" : "vec2",
+            "name" : "i.uv1",
+            "location" : 3
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "@entryPointOutput.color",
+            "location" : 0
+        },
+        {
+            "type" : "vec2",
+            "name" : "@entryPointOutput.uv0",
+            "location" : 1
+        },
+        {
+            "type" : "vec2",
+            "name" : "@entryPointOutput.uv1",
+            "location" : 2
+        }
+    ],
+    "ubos" : [
+        {
+            "type" : "_21",
+            "name" : "$Global",
+            "block_size" : 80,
+            "set" : 0,
+            "binding" : 0
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+  "props": [{
+      "name": "color", 
+      "propType": "Color", 
+      "displayName": "", 
+      "defaultValue": "0,1,0,1"
+    }], 
+  "passes": [{
+      "name": "Pass0", 
+      "vsFunc": "", 
+      "psFunc": "", 
+      "csFunc": "cs_main", 
+      "renderState": {
+        "cull": "Back", 
+        "blend": {
+          "rgb": {
+            "op": "Disable", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "alpha": {
+            "op": "Disable", 
+            "srcFactor": "One", 
+            "dstFactor": "OneMinusSrcAlpha"
+          }, 
+          "constColor": [0, 0, 0, 0]
+        }, 
+        "depthTest": {
+          "op": "LessEqual", 
+          "writeMask": true
+        }, 
+        "antialiasedLine": false, 
+        "wireframe": false
+      }
+    }]
+}

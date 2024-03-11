@@ -1,0 +1,11 @@
+[SourceExplorer.ignore]
+.git
+.svn
+
+[SearchableFiles.include]
+*
+
+[SearchableFiles.ignore]
+/externals/
+/build/
+.svn

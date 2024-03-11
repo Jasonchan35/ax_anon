@@ -1,0 +1,54 @@
+{
+  "profile": "", 
+  "csWorkgroupSize": [1, 1, 1], 
+  "inputs": [{
+      "name": "i.color", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x4"
+    }, {
+      "name": "i.uv0", 
+      "attrId": "Unknown", 
+      "dataType": "Float32x2"
+    }], 
+  "params": [], 
+  "uniformBuffers": [{
+      "name": "$Global", 
+      "bindPoint": 0, 
+      "bindCount": 0, 
+      "dataSize": 128, 
+      "variables": [{
+          "name": "matMvp", 
+          "offset": 0, 
+          "dataType": "Float32_4x4"
+        }, {
+          "name": "color0", 
+          "offset": 64, 
+          "dataType": "Float32x4"
+        }, {
+          "name": "color1", 
+          "offset": 80, 
+          "dataType": "Float32x4"
+        }, {
+          "name": "color2", 
+          "offset": 96, 
+          "dataType": "Float32x4"
+        }, {
+          "name": "color3", 
+          "offset": 112, 
+          "dataType": "Float32x4"
+        }]
+    }], 
+  "textures": [{
+      "name": "mainTex0", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "Texture2D"
+    }], 
+  "samplers": [{
+      "name": "_axSamplerState_mainTex0", 
+      "bindPoint": 8, 
+      "bindCount": 0, 
+      "dataType": "SamplerState"
+    }], 
+  "storageBuffers": []
+}

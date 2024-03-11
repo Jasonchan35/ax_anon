@@ -1,0 +1,16 @@
+{
+	"group": "libax",
+	"type": "cpp_exe",
+	"gui_app": true,
+	
+	"dependencies": ["libax_ui"],
+
+	"files" : [
+		"src/**/*.cpp",
+		"*.axproj"
+	],
+
+	"config": {
+		"include_dirs.local": ["external"]
+	}
+}

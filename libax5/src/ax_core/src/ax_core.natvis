@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010"> 	
+
+<!--
+	Reference Document 
+	https://msdn.microsoft.com/en-us/library/jj620914.aspx
+	
+	Expression[,<FormatSpecifier> ]
+	https://msdn.microsoft.com/en-us/library/windows/hardware/dn936815(v=vs.85).aspx
+-->
+
+	<!-- axVec4<T> -->
+	<Type Name="axVec4&lt;*&gt;">
+		<DisplayString>x={x}, y={y}, z={z}, w={w}</DisplayString>
+	</Type>
+	<!-- axMargin2<T> -->
+	<Type Name="axMargin2&lt;*&gt;">
+		<DisplayString>top={top}, right={right}, bottom={bottom}, left={left}</DisplayString>
+	</Type>
+	<!-- axRect2<T> -->
+	<Type Name="axRect2&lt;*&gt;">
+		<DisplayString>x={x}, y={y}, w={w}, h={h}</DisplayString>
+	</Type>
+	<!-- axColorRGBAf<T> -->
+	<Type Name="axColorRGBAf;">
+		<DisplayString>r={r}, g={g}, b={b}, a={a}</DisplayString>
+	</Type>
+	<!-- axColorRGBAb<T> -->
+	<Type Name="axColorRGBAb;">
+		<DisplayString>r={r}, g={g}, b={b}, a={a}</DisplayString>
+	</Type>
+
+	<Type Name="axDebugNatvisHex::Low">
+			<DisplayString Condition="((c &amp; 0x0f) == 0x00)">0</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x01)">1</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x02)">2</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x03)">3</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x04)">4</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x05)">5</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x06)">6</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x07)">7</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x08)">8</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x09)">9</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0a)">A</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0b)">B</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0c)">C</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0d)">D</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0e)">E</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0f)">F</DisplayString>
+	</Type>
+
+	<Type Name="axDebugNatvisHex::High">
+			<DisplayString Condition="((c >> 4) == 0x00)">0</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x01)">1</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x02)">2</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x03)">3</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x04)">4</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x05)">5</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x06)">6</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x07)">7</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x08)">8</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x09)">9</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0a)">A</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0b)">B</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0c)">C</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0d)">D</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0e)">E</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0f)">F</DisplayString>
+	</Type>
+
+
+	<Type Name="axDebugNatvisHex::low">
+			<DisplayString Condition="((c &amp; 0x0f) == 0x00)">0</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x01)">1</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x02)">2</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x03)">3</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x04)">4</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x05)">5</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x06)">6</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x07)">7</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x08)">8</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x09)">9</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0a)">a</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0b)">b</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0c)">c</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0d)">d</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0e)">e</DisplayString>
+			<DisplayString Condition="((c &amp; 0x0f) == 0x0f)">f</DisplayString>
+	</Type>
+
+	<Type Name="axDebugNatvisHex::high">
+			<DisplayString Condition="((c >> 4) == 0x00)">0</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x01)">1</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x02)">2</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x03)">3</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x04)">4</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x05)">5</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x06)">6</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x07)">7</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x08)">8</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x09)">9</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0a)">a</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0b)">b</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0c)">c</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0d)">d</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0e)">e</DisplayString>
+			<DisplayString Condition="((c >> 4) == 0x0f)">f</DisplayString>
+	</Type>  
+    
+	<Type Name="axUuid;">
+		<DisplayString>[uuid] 
+			{*(axDebugNatvisHex::high*)&amp;value.data[0 ]}{*(axDebugNatvisHex::low*)&amp;value.data[0 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[1 ]}{*(axDebugNatvisHex::low*)&amp;value.data[1 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[2 ]}{*(axDebugNatvisHex::low*)&amp;value.data[2 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[3 ]}{*(axDebugNatvisHex::low*)&amp;value.data[3 ]}-
+			{*(axDebugNatvisHex::high*)&amp;value.data[4 ]}{*(axDebugNatvisHex::low*)&amp;value.data[4 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[5 ]}{*(axDebugNatvisHex::low*)&amp;value.data[5 ]}-
+			{*(axDebugNatvisHex::high*)&amp;value.data[6 ]}{*(axDebugNatvisHex::low*)&amp;value.data[6 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[7 ]}{*(axDebugNatvisHex::low*)&amp;value.data[7 ]}-
+			{*(axDebugNatvisHex::high*)&amp;value.data[8 ]}{*(axDebugNatvisHex::low*)&amp;value.data[8 ]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[9 ]}{*(axDebugNatvisHex::low*)&amp;value.data[9 ]}-
+			{*(axDebugNatvisHex::high*)&amp;value.data[10]}{*(axDebugNatvisHex::low*)&amp;value.data[10]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[11]}{*(axDebugNatvisHex::low*)&amp;value.data[11]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[12]}{*(axDebugNatvisHex::low*)&amp;value.data[12]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[13]}{*(axDebugNatvisHex::low*)&amp;value.data[13]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[14]}{*(axDebugNatvisHex::low*)&amp;value.data[14]}
+			{*(axDebugNatvisHex::high*)&amp;value.data[15]}{*(axDebugNatvisHex::low*)&amp;value.data[15]}
+		</DisplayString>
+	</Type>
+	
+	<!-- axCharA -->
+	<Type Name="axCharT&lt;char&gt;"> 
+		<DisplayString>{value}</DisplayString> 	
+	</Type> 
+
+	<!-- axCharU -->
+	<Type Name="axCharT&lt;unsigned short&gt;"> 
+		<DisplayString>{(wchar_t)value}</DisplayString> 	
+	</Type> 
+
+	<!-- axCharW -->
+	<Type Name="axCharT&lt;wchar_t&gt;"> 
+		<DisplayString>{value}</DisplayString> 	
+	</Type>
+
+	<!-- axPtr<T> -->
+	<Type Name="axPtr&lt;*&gt;">
+		<DisplayString>_p={_p}</DisplayString>
+		<Expand>
+			<Item Name="_p">_p</Item>
+		</Expand>
+	</Type>
+
+	<!-- axUPtr<T,deleter> -->
+	<Type Name="axUPtr&lt;*,*&gt;">
+		<DisplayString>_p={_p}</DisplayString>
+		<Expand>
+			<Item Name="_p">_p</Item>
+		</Expand>
+	</Type>
+
+	<!-- axSPtr<T,RefCount,deleter> -->
+	<Type Name="axSPtr&lt;*,*,*&gt;">
+		<DisplayString>_p={_p}</DisplayString>
+		<Expand>
+			<Item Name="_p">_p</Item>
+		</Expand>
+	</Type>
+
+	<!-- axLink<T> -->
+	<Type Name="axLink&lt;*&gt;">
+		<DisplayString>_p={_p}</DisplayString>
+		<Expand>
+			<Item Name="_p">_p</Item>
+			<Item Name="_owner">_owner</Item>
+		</Expand>
+	</Type>
+	
+	<!-- axStrMutViewT<axChar8> -->
+	<Type Name="axStrMutViewT&lt;char&gt;">
+		<AlternativeType Name="axStrMutViewT&lt;char const&gt;"/>
+		<DisplayString>size={_size} {_data,[_size]s8}</DisplayString>
+		<StringView>_data,s8</StringView>
+		<Expand>
+			<Item Name="_data">_data</Item>
+			<Item Name="_size">_size</Item>
+		</Expand> 
+	</Type>
+
+	<!-- axStrMutViewT<axChar16>, axStrMutViewT<axCharW> -->
+	<Type Name="axStrMutViewT&lt;char16_t&gt;">
+		<AlternativeType Name="axStrMutViewT&lt;char16_t const&gt;"/>
+		<AlternativeType Name="axStrMutViewT&lt;wchar_t&gt;"/>
+		<AlternativeType Name="axStrMutViewT&lt;wchar_t const&gt;"/>
+		<DisplayString>size={_size} {_data,[_size]su}</DisplayString>
+		<StringView>_data,su</StringView>
+		<Expand> 
+			<Item Name="_data">_data</Item>
+			<Item Name="_size">_size</Item>
+		</Expand> 
+	</Type>
+
+	<!-- axStrMutViewT<axChar32> -->
+	<Type Name="axStrMutViewT&lt;char16_t&gt;">
+		<AlternativeType Name="axStrMutViewT&lt;char32_t const&gt;"/>
+		<DisplayString>size={_size} {_data,[_size]s32}</DisplayString>
+		<StringView>_data,s32</StringView>
+		<Expand>
+			<Item Name="_data">_data</Item>
+			<Item Name="_size">_size</Item>
+		</Expand>
+	</Type>
+
+
+	<!-- axIStringT<axChar8> -->
+	<Type Name="axIStringT&lt;char&gt;">
+		<DisplayString Condition="_storage._small.size &gt;= 0">size={(int)_storage._small.size } {_storage._small.data ,[_storage._small.size ]s8}</DisplayString>
+		<DisplayString Condition="_storage._small.size &lt;  0">size={     _storage._normal.size} {_storage._normal.data,[_storage._normal.size]s8}</DisplayString>
+		
+		<StringView    Condition="_storage._small.size &gt;= 0">_storage._small.data, [_storage._small.size ]s8</StringView>
+		<StringView    Condition="_storage._small.size &lt;  0">_storage._normal.data,[_storage._normal.size]s8</StringView>
+		
+		<Expand>
+			<Item Name="data" Condition="_storage._small.size &gt;= 0">_storage._small.data</Item>
+			<Item Name="data" Condition="_storage._small.size &lt;  0">_storage._normal.data</Item>
+
+			<Item Name="size" Condition="_storage._small.size &gt;= 0">_storage._small.size</Item>
+			<Item Name="size" Condition="_storage._small.size &lt;  0">_storage._normal.size</Item>
+			
+			<Item Name="capacity" Condition="_storage._small.size &gt;= 0">_storage._small.capacity</Item>
+			<Item Name="capacity" Condition="_storage._small.size &lt;  0">
+				<!-- byteswap(_capacity & 0x7f) -->
+				((((uint8_t*)&amp;_storage._normal._capacity)[0] &amp; 0x7F) &lt;&lt; 56)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[1] &lt;&lt; 48)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[2] &lt;&lt; 40)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[3] &lt;&lt; 32)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[4] &lt;&lt; 24)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[5] &lt;&lt; 16)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[6] &lt;&lt; 8)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[7])
+			</Item>
+			<Item Name="_allocator">_allocator</Item>
+		</Expand>
+	</Type>
+
+	<!-- axIStringT<char16_t> -->
+	<Type Name="axIStringT&lt;char16_t&gt;">
+		<!-- axIStringT<wchar_t> -->
+		<AlternativeType Name="axIStringT&lt;wchar_t&gt;"/>
+		
+		<DisplayString Condition="_storage._small.size &gt;= 0">size={(int)_storage._small.size } {_storage._small.data ,[_storage._small.size ]su}</DisplayString>
+		<DisplayString Condition="_storage._small.size &lt;  0">size={     _storage._normal.size} {_storage._normal.data,[_storage._normal.size]su}</DisplayString>
+		
+		<StringView    Condition="_storage._small.size &gt;= 0">_storage._small.data, [_storage._small.size ]su</StringView>
+		<StringView    Condition="_storage._small.size &lt;  0">_storage._normal.data,[_storage._normal.size]su</StringView>
+		
+		<Expand>
+			<Item Name="data" Condition="_storage._small.size &gt;= 0">_storage._small.data</Item>
+			<Item Name="data" Condition="_storage._small.size &lt;  0">_storage._normal.data</Item>
+
+			<Item Name="size" Condition="_storage._small.size &gt;= 0">_storage._small.size</Item>
+			<Item Name="size" Condition="_storage._small.size &lt;  0">_storage._normal.size</Item>
+			
+			<Item Name="capacity" Condition="_storage._small.size &gt;= 0">_storage._small.capacity</Item>
+			<Item Name="capacity" Condition="_storage._small.size &lt;  0">
+				<!-- byteswap(_capacity & 0x7f) -->
+				((((uint8_t*)&amp;_storage._normal._capacity)[0] &amp; 0x7F) &lt;&lt; 56)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[1] &lt;&lt; 48)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[2] &lt;&lt; 40)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[3] &lt;&lt; 32)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[4] &lt;&lt; 24)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[5] &lt;&lt; 16)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[6] &lt;&lt; 8)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[7])
+			</Item>
+			<Item Name="_allocator">_allocator</Item>
+		</Expand>
+	</Type>
+
+	<!-- axIStringT<char32_t> -->
+	<Type Name="axIStringT&lt;char32_t&gt;">
+		<DisplayString Condition="_storage._small.size &gt;= 0">size={(int)_storage._small.size } {_storage._small.data ,[_storage._small.size ]s32}</DisplayString>
+		<DisplayString Condition="_storage._small.size &lt;  0">size={     _storage._normal.size} {_storage._normal.data,[_storage._normal.size]s32}</DisplayString>
+		
+		<StringView    Condition="_storage._small.size &gt;= 0">_storage._small.data, [_storage._small.size ]s32</StringView>
+		<StringView    Condition="_storage._small.size &lt;  0">_storage._normal.data,[_storage._normal.size]s32</StringView>
+		
+		<Expand>
+			<Item Name="data" Condition="_storage._small.size &gt;= 0">_storage._small.data</Item>
+			<Item Name="data" Condition="_storage._small.size &lt;  0">_storage._normal.data</Item>
+
+			<Item Name="size" Condition="_storage._small.size &gt;= 0">_storage._small.size</Item>
+			<Item Name="size" Condition="_storage._small.size &lt;  0">_storage._normal.size</Item>
+			
+			<Item Name="capacity" Condition="_storage._small.size &gt;= 0">_storage._small.capacity</Item>
+			<Item Name="capacity" Condition="_storage._small.size &lt;  0">
+				<!-- byteswap(_capacity & 0x7f) -->
+				((((uint8_t*)&amp;_storage._normal._capacity)[0] &amp; 0x7F) &lt;&lt; 56)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[1] &lt;&lt; 48)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[2] &lt;&lt; 40)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[3] &lt;&lt; 32)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[4] &lt;&lt; 24)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[5] &lt;&lt; 16)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[6] &lt;&lt; 8)
+				+ (((uint8_t*)&amp;_storage._normal._capacity)[7])
+			</Item>
+			<Item Name="_allocator">_allocator</Item>
+		</Expand>
+	</Type>
+
+	<!-- axMutSpan<*> -->
+	<Type Name="axMutSpan&lt;*&gt;">
+		<DisplayString Condition="_size==1">size={_size} data=[{_data[0]}]</DisplayString>
+		<DisplayString Condition="_size==2">size={_size} data=[{_data[0]}, {_data[1]}]</DisplayString>
+		<DisplayString Condition="_size==3">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}]</DisplayString>
+		<DisplayString Condition="_size==4">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}]</DisplayString>
+		<DisplayString Condition="_size>=5">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}, ...]</DisplayString>
+		<DisplayString>size={_size}</DisplayString> 	
+		<Expand> 
+			<Item Name="_data">_data</Item>
+			<Item Name="_size">_size</Item> 
+			<ArrayItems> 
+			  <Size>_size</Size> 
+			  <ValuePointer>_data</ValuePointer> 
+			</ArrayItems> 
+		</Expand> 	
+	</Type>
+	
+	<!-- axIArray<*> -->
+	<Type Name="axIArray&lt;*&gt;">
+		<!-- axArray<*,*> -->
+		<AlternativeType Name="axArray&lt;*,*&gt;"/>
+		
+		<DisplayString Condition="_size==1">size={_size} data=[{_data[0]}]</DisplayString>
+		<DisplayString Condition="_size==2">size={_size} data=[{_data[0]}, {_data[1]}]</DisplayString>
+		<DisplayString Condition="_size==3">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}]</DisplayString>
+		<DisplayString Condition="_size==4">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}]</DisplayString>
+		<DisplayString Condition="_size>=5">size={_size} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}, ...]</DisplayString>
+		<DisplayString>size={_size}</DisplayString>
+		<Expand>
+			<Item Name="_data">_data</Item>
+			<Item Name="_size">_size</Item> 
+			<Item Name="_capacity">_capacity</Item>
+			<Item Name="_allocator">_allocator</Item>
+			<ArrayItems> 
+			  <Size>_size</Size> 
+			  <ValuePointer>_data</ValuePointer> 
+			</ArrayItems> 
+		</Expand> 	
+	</Type>
+	
+	<!-- axFixedArray<*,*> -->
+	<Type Name="axFixedArray&lt;*,*&gt;">
+		<DisplayString Condition="_size==1">size={$T2} data=[{_data[0]}]</DisplayString>
+		<DisplayString Condition="_size==2">size={$T2} data=[{_data[0]}, {_data[1]}]</DisplayString>
+		<DisplayString Condition="_size==3">size={$T2} data=[{_data[0]}, {_data[1]}, {_data[2]}]</DisplayString>
+		<DisplayString Condition="_size==4">size={$T2} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}]</DisplayString>
+		<DisplayString Condition="_size>=5">size={$T2} data=[{_data[0]}, {_data[1]}, {_data[2]}, {_data[3]}, ...]</DisplayString>
+		<DisplayString>size={$T2}</DisplayString> 	
+		<Expand> 
+			<Item Name="_data">_data</Item>
+			<Item Name="[fixed size]">$T2</Item>
+			<ArrayItems> 
+			  <Size>$T2</Size> 
+			  <ValuePointer>_localBuf</ValuePointer> 
+			</ArrayItems> 
+		</Expand> 	
+	</Type>
+</AutoVisualizer>

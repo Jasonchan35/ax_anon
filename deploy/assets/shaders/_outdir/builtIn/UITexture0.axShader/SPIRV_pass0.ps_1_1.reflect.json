@@ -1,0 +1,22 @@
+{
+    "entryPoints" : [
+        {
+            "name" : "ps_main",
+            "mode" : "frag"
+        }
+    ],
+    "inputs" : [
+        {
+            "type" : "vec4",
+            "name" : "i.color",
+            "location" : 0
+        }
+    ],
+    "outputs" : [
+        {
+            "type" : "vec4",
+            "name" : "@entryPointOutput",
+            "location" : 0
+        }
+    ]
+}

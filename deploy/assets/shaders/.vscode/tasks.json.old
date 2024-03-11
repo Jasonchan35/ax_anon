@@ -1,0 +1,29 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "echoCommand": true,
+    "suppressTaskName": true,
+
+    "windows": {
+        "command": "call",
+        //"args": ["compile_hlsl.bat"]
+        //"args": ["compile_glsl.bat"]
+        "args": ["make.bat"]
+    },
+    "linux": {
+        "command": "make",
+        //"args": ["-j"]
+    },
+    "osx": {
+        "command": "make",
+        //"args": ["-j"]
+    },
+    "tasks": [
+        {
+            "taskName": "build",
+            "showOutput": "always",            
+            "isBuildCommand": true
+        }
+    ]
+}
