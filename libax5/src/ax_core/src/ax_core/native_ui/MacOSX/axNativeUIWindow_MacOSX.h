@@ -3,6 +3,7 @@
 #if AX_OS_MACOSX
 #include "../Base/axNativeUIWindow_Base.h"
 #include "axNativeUIEventUtil_MacOSX.h"
+#include "../axNativeUIScreen.h"
 
 class axNativeUIWindow_MacOSX;
 

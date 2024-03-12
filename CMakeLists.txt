@@ -9,7 +9,7 @@ include(libax5/src/libax_common.cmake)
 
 #set(CMAKE_BUILD_TYPE Debug)
 
-set(PROJECT_NAME "ax_anon")
+set(PROJECT_NAME "ax_anon" LANGUAGES C CXX OBJC OBJCXX)
 
 
 if (CMAKE_GENERATOR_TOOLSET)
