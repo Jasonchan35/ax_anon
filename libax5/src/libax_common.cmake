@@ -6,35 +6,6 @@ message("CMAKE_GENERATOR_TOOLSET   = ${CMAKE_GENERATOR_TOOLSET}")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-#------- AX_ENABLE_CXX_MODULE ----------------
-if (AX_ENABLE_CXX_MODULE)
-	set(CMAKE_CXX_STANDARD 20)
-	message("AX_ENABLE_CXX_MODULE ON")
-
-	if (MSVC) # TODO!!!  MSVC might be not set yet, before add_library
-		set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API "2182bf5c-ef0d-489a-91da-49dbc3090d2a")
-		set(CMAKE_EXPERIMENTAL_CXX_MODULE_DYNDEP ON)
-		
-	else()
-		string(CONCAT CMAKE_EXPERIMENTAL_CXX_SCANDEP_SOURCE
-		"<CMAKE_CXX_COMPILER> <DEFINES> <INCLUDES> <FLAGS> <SOURCE>"
-		" -MT <DYNDEP_FILE> -MD -MF <DEP_FILE>"
-		" ${flags_to_scan_deps} -fdep-file=<DYNDEP_FILE> -fdep-output=<OBJECT>"
-		)
-
-		set(CMAKE_EXPERIMENTAL_CXX_MODULE_MAP_FORMAT "gcc")
-		set(CMAKE_EXPERIMENTAL_CXX_MODULE_MAP_FLAG
-		"${compiler_flags_for_module_map} -fmodule-mapper=<MODULE_MAP_FILE>")
-
-	endif()
-
-else()
-	message("AX_ENABLE_CXX_MODULE OFF")
-	set(CMAKE_CXX_STANDARD 17)
-
-endif()
-
-
 #---- helper functions ----------
 
 # function(ax_test_call_by_reference varName)
@@ -182,15 +153,24 @@ endfunction()
 
 function(ax_target_source_from_folder target_name src_path)
 	file(GLOB_RECURSE all_files  "${src_path}/src/*.*")
+	file(GLOB_RECURSE h_files    "${src_path}/src/*.h")
 	file(GLOB_RECURSE cpp_files  "${src_path}/src/*.cpp")
 
 	ax_source_group(${src_path} "${all_files}")
 
 	set(other_files ${all_files})
-	list(REMOVE_ITEM other_files ${cpp_files})
+	list(REMOVE_ITEM other_files ${cpp_files} ${h_files})
 
-	target_sources(${target_name} PRIVATE ${other_files})
+	target_sources(${target_name} PRIVATE ${h_files})
 	target_sources(${target_name} PRIVATE ${cpp_files})
+	target_sources(${target_name} PRIVATE ${other_files})
+
+	if(CMAKE_GENERATOR STREQUAL Xcode)
+	set_source_files_properties(${h_files}   PROPERTIES LANGUAGE OBJCXX)
+	set_source_files_properties(${cpp_files} PROPERTIES LANGUAGE OBJCXX)
+	endif()
+
+
 endfunction()
 
 function(ax_target_set_header_only_common_properties target_name)

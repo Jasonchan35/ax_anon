@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/externals/_vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 set(VCPKG_TARGET_ARCHITECTURE x64)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(libax5/src/libax_common.cmake)
 

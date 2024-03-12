@@ -8,5 +8,4 @@
 #include "Geometry/_ALL_Geometry.h"
 #include "Panels/_ALL_Panels.h"
 #include "Scene/_ALL_Scene.h"
-#include "_ALL_libanonEditor.h"
 #include "libAnonEditor_config.h"

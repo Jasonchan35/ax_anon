@@ -5,7 +5,7 @@
 #if AX_TRY_USE_OPENGL
 	#define ax_HAS_GLEW 1
 	#define GLEW_STATIC 1
-	#include "glew/glew.h"
+	#include <ax_core/glew/glew.h>
 #endif
 
 #define AX_TYPE_HAS_LONG		1

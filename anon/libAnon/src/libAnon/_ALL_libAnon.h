@@ -7,5 +7,4 @@
 #include "Geometry/_ALL_Geometry.h"
 #include "Importer/_ALL_Importer.h"
 #include "Scene/_ALL_Scene.h"
-#include "_ALL_libanon.h"
 #include "libAnon_config.h"
