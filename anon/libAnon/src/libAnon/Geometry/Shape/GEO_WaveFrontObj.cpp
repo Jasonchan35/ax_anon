@@ -1,6 +1,6 @@
 #include "GEO_WaveFrontObj.h"
 #include "../Core/GEO_GeoData_RenderMeshHelper.h"
-#include <libanon/Importer/WaveFrontObjImporter.h>
+#include <libAnon/Importer/WaveFrontObjImporter.h>
 
 namespace Anon {
 

@@ -1,6 +1,6 @@
 #include "SceneView_MoveTool.h"
-#include <libanonEditor/App/EditorApp.h>
-#include <libanonEditor/Panels/SceneViewPanel/SceneViewPanel.h>
+#include <libAnonEditor/App/EditorApp.h>
+#include <libAnonEditor/Panels/SceneViewPanel/SceneViewPanel.h>
 
 namespace Anon { namespace Editor {
 

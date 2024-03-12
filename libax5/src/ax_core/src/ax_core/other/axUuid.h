@@ -39,7 +39,7 @@ public:
 
 	constexpr void setToZero() { value.q0 = 0; value.q1 = 0; }
 
-	static constexpr axUuid s_zero() { axUuid t; t.setToZero(); return t; }
+	static axUuid s_zero() { return axUuid(); }
 
 	void generate();
 	static axUuid s_generate() { axUuid t; t.generate(); return t; }

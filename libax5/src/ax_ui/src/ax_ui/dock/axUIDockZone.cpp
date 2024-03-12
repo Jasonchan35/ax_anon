@@ -218,7 +218,7 @@ void axUIDockZone::PanelArea::onRenderContextRender(axRenderRequest& req) {
 	}
 
 	AX_ZoneScoped;
-	AX_ZoneText(name.data(), name.size())
+	AX_ZoneText(name.data(), name.size());
 
 	render(req);
 }

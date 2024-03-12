@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../libanon_config.h"
+#include <libAnon/libAnon_config.h>
 
 namespace Anon {
 

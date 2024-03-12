@@ -15,4 +15,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Tracy::TracyClient)
 
 if(UNIX)
 	target_link_libraries(${PROJECT_NAME} PUBLIC -luuid)
+	target_link_libraries(${PROJECT_NAME} PUBLIC -lX11 -lXt -lxcb -lXdmcp -lXau -lXext -lGL)
 endif()

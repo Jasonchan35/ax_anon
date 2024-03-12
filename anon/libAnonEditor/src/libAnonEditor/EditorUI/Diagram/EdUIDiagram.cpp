@@ -1,6 +1,6 @@
-#include <libanonEditor/App/EditorApp.h>
-#include <libanonEditor/EditorUI/EdUICommon.h>
-#include <libanonEditor/Panels/DiagramPanel/DiagramPanel.h>
+#include <libAnonEditor/App/EditorApp.h>
+#include <libAnonEditor/EditorUI/EdUICommon.h>
+#include <libAnonEditor/Panels/DiagramPanel/DiagramPanel.h>
 
 #include "EdUIDiagram.h"
 #include "EdUIDiaNode.h"

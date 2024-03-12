@@ -7,8 +7,8 @@ public:
 		axMat<float> m;
 		m.create(6, 4);
 
-		for (axInt r = 0; r < m.numRow(); r++) {
-			for (axInt c = 0; c < m.numCol(); c++) {
+		for (axInt r = 0; r < m.rowCount(); r++) {
+			for (axInt c = 0; c < m.colCount(); c++) {
 				m.at(c, r) = c * 10.0f + r;
 			}
 		}

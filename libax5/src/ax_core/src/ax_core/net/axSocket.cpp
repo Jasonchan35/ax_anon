@@ -290,7 +290,6 @@ void axTcpSocket::bind(const axSockAddr &addr) {
 
 	int ret = ::bind(_h, addr._sockaddr(), addr._addrlen());
 	if (ret < 0) {
-		AX_LOG_WIN32_LAST_ERROR("socket bind");
 		throw axError_Undefined(AX_LOC);
 	}
 }

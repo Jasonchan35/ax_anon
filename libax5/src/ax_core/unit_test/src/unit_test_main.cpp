@@ -111,7 +111,7 @@ int main() {
 //--------
 	ax_unit_test_log("\n\n==== Program Ended ==== \n");
 
-	#if 1 // AX_COMPILER_VC
+	#if AX_COMPILER_VC
 		if (IsDebuggerPresent()) {
 			ax_unit_test_log(" ! Press Any Key to Exit\n\n");
 			_getch();

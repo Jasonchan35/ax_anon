@@ -5,10 +5,10 @@
 #if AX_TRY_USE_OPENGL
 	#define ax_HAS_GLEW 1
 	#define GLEW_STATIC 1
-	#include <ax_core/base/glew/glew.h>
+	#include <ax_core/glew/glew.h>
 
 	#define GLEW_STATIC 1
-	#include <ax_core/base/glew/glxew.h>
+	#include <ax_core/glew/glxew.h>
 #endif
 
 #define BOOL ax_X11_BOOL

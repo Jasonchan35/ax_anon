@@ -1,4 +1,4 @@
-#include <libanonEditor/App/EditorApp.h>
+#include <libAnonEditor/App/EditorApp.h>
 #include "SCN_Geometry_Inspector.h"
 
 namespace Anon{ namespace Editor {

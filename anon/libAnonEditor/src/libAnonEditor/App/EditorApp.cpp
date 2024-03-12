@@ -86,10 +86,12 @@ void EditorApp::onCreate() {
 	#endif
 
 	axString resourcesDir;
-#if AX_OS_IOS
+#if AX_OS_WINDOWS
+	resourcesDir = "../../..";
+#elif AX_OS_IOS
 	resourcesDir = axPath::appResourcesDir();
 #else
-	resourcesDir = "../../..";
+	resourcesDir = "../..";
 #endif
 
 	_assetsDir.append(resourcesDir, "/assets");

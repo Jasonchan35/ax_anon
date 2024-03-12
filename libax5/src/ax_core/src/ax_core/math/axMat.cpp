@@ -71,14 +71,14 @@ template<class T>
 void axMat<T>::mul(const axMat& a, const axMat& b) {
 	if (a._colCount != b._rowCount) throw axError_Undefined(AX_LOC);
 
-	auto oc = ax_min(a._colCount, b._colCount);
-	auto or = ax_min(a._rowCount, b._rowCount);
-	create(oc, or);
+	auto ocol = ax_min(a._colCount, b._colCount);
+	auto orow = ax_min(a._rowCount, b._rowCount);
+	create(ocol, orow);
 
 	auto n = a._colCount;
 
-	for (axInt r = 0; r < or; r++) {
-		for (axInt c = 0; c < oc; c++) {
+	for (axInt r = 0; r < orow; r++) {
+		for (axInt c = 0; c < ocol; c++) {
 			T v = 0;
 			for (axInt i = 0; i < n; i++) {
 				auto av = a.at(i, r);

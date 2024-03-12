@@ -86,7 +86,7 @@ void GEO_Subdiv_create(GEO_GeoData& dst, const GEO_GeoData& src, axInt level) {
 	AX_ZoneScoped;
 	#if TRACY_ENABLE
 	auto text = axTempString::s_format("Lv={?}", level);
-	ZoneText(text.c_str(), text.size())
+	ZoneText(text.c_str(), text.size());
 	#endif
 
 	auto srcPoints		= src.readPoints();

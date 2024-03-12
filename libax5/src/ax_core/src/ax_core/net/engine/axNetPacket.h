@@ -19,7 +19,7 @@ public:
 
 		Len(Value v = 0) : value(v) {}
 
-		operator Len() const { return value; }
+		operator Value() const { return value; }
 
 		static const Value kKey = 0x1A59;
 

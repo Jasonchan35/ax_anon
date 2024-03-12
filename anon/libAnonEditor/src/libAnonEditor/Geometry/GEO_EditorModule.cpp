@@ -1,4 +1,4 @@
-#include <libanonEditor/App/EditorApp.h>
+#include <libAnonEditor/App/EditorApp.h>
 #include "GEO_EditorModule.h"
 #include "GEO_Node_UIDiaNode.h"
 

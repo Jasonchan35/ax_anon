@@ -1,4 +1,4 @@
-#include <libanonEditor/App/EditorApp.h>
+#include <libAnonEditor/App/EditorApp.h>
 #include "EdUIObjectInspector.h"
 
 namespace Anon { namespace Editor {

@@ -1,4 +1,4 @@
-#include <libanonEditor/App/EditorApp.h>
+#include <libAnonEditor/App/EditorApp.h>
 #include "SCN_EditorModule.h"
 #include "SCN_Object_Inspector.h"
 #include "SCN_Component_Inspector.h"

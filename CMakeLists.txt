@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/externals/_vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+set(VCPKG_TARGET_ARCHITECTURE x64)
 set(CMAKE_CXX_STANDARD 11)
 
 include(libax5/src/libax_common.cmake)
@@ -8,6 +9,7 @@ include(libax5/src/libax_common.cmake)
 #set(CMAKE_BUILD_TYPE Debug)
 
 set(PROJECT_NAME "ax_anon")
+
 
 if (CMAKE_GENERATOR_TOOLSET)
 	set(PROJECT_NAME "${PROJECT_NAME}-${CMAKE_GENERATOR_TOOLSET}")

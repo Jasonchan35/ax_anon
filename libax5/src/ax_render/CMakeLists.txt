@@ -10,18 +10,21 @@ set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "libax")
 
 target_link_libraries(${PROJECT_NAME} PUBLIC ax_core)
 
-if(WIN32)
-	set(vulkan_sdk_path "C:/VulkanSDK/1.2.198.1")
-	target_include_directories(${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Include")
-	target_link_directories(   ${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Lib")
-	target_link_libraries(${PROJECT_NAME} PUBLIC vulkan-1)
-endif()
+# if(WIN32)
+# 	set(vulkan_sdk_path "C:/VulkanSDK/1.2.198.1")
+# 	target_include_directories(${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Include")
+# 	target_link_directories(   ${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Lib")
+# 	target_link_libraries(${PROJECT_NAME} PUBLIC vulkan-1)
+# endif()
+
+find_package(Vulkan REQUIRED)
+target_link_libraries(${PROJECT_NAME} PUBLIC Vulkan::Vulkan)
 
 find_package(PNG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC PNG::PNG)
 
 find_package(mozjpeg REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC mozjpeg::jpeg mozjpeg::turbojpeg)
+target_link_libraries(${PROJECT_NAME} PUBLIC mozjpeg::jpeg-static)
 
 find_package(Freetype REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC Freetype::Freetype)

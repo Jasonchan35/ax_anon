@@ -1,7 +1,7 @@
 #include "SCN_System.h"
 #include "SCN_Object.h"
 #include "Lights/SCN_PointLight.h"
-#include <libanon/Core/AnonContext.h>
+#include <libAnon/Core/AnonContext.h>
 
 namespace Anon {
 

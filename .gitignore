@@ -1,5 +1,7 @@
 externals/_vcpkg
 
+build
 _build
+
 deploy/bin
 
