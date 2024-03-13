@@ -9,7 +9,7 @@ include(libax5/src/libax_common.cmake)
 
 #set(CMAKE_BUILD_TYPE Debug)
 
-set(PROJECT_NAME "ax_anon" LANGUAGES C CXX OBJC OBJCXX)
+set(PROJECT_NAME "ax_anon")
 
 
 if (CMAKE_GENERATOR_TOOLSET)
@@ -23,7 +23,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/deploy/bin/${VCPKG_TARGE
 
 message("==== ${PROJECT_NAME} ====")
 message("VCPKG_TARGET_TRIPLET = ${VCPKG_TARGET_TRIPLET}")
-project(${PROJECT_NAME})
+
+if(CMAKE_GENERATOR STREQUAL Xcode)
+	project(${PROJECT_NAME} LANGUAGES C CXX OBJC OBJCXX)
+else()
+	project(${PROJECT_NAME} LANGUAGES C CXX)
+endif()
 
 add_subdirectory(libax5/src/ax_detect_platform)
 add_subdirectory(libax5/src/ax_core)

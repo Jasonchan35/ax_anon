@@ -166,10 +166,8 @@ function(ax_target_source_from_folder target_name src_path)
 	target_sources(${target_name} PRIVATE ${other_files})
 
 	if(CMAKE_GENERATOR STREQUAL Xcode)
-	set_source_files_properties(${h_files}   PROPERTIES LANGUAGE OBJCXX)
-	set_source_files_properties(${cpp_files} PROPERTIES LANGUAGE OBJCXX)
+		set_source_files_properties(${cpp_files} PROPERTIES LANGUAGE OBJCXX)
 	endif()
-
 
 endfunction()
 

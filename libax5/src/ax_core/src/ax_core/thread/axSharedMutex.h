@@ -39,7 +39,7 @@ public:
 		_mutex.lock();
 		UniqueLock r(_readMutex);
 		while (_readers) {
-			_readCv.wait(_readMutex);
+			_readCv.wait(r);
 		}
 	}
 
