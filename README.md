@@ -6,7 +6,7 @@ More for personal learning or experiment purpose I did during free time
 	- Windows - DirectX 11/12, Vulkan, OpenGL
 	- MacOSX – MoltenVK, Metal, OpenGL
 	- Linux X11 – Vulkan, OpenGL
-- Shaders – HLSL for all platform by compile to SPIRV for Vulkan, and SPIRV-cross to output Metal and GLSL
+- Shaders – HLSL for all platforms by compile to SPIRV for Vulkan, and SPIRV-cross to output Metal and GLSL
 	- Contributed to SPIRV-cross, added `--rename-interface-variable` for Mac GLSL issue
 https://github.com/KhronosGroup/SPIRV-Cross/issues/196
 	- Compute Shader and output as vertex buffer
