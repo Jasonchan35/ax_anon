@@ -24,9 +24,9 @@ https://github.com/KhronosGroup/SPIRV-Cross/issues/196
 [Click here for More screenshots](screenshots/screenshots.md)
 
 **On Windows**
-![](Screenshots/2024-03-12%20Screenshot.png)
+![](screenshots/2024-03-12%20Screenshot.png)
 
 
 **On Linux X11**
-![](Screenshots/2024-03-12%20Linux%20X11.png)
+![](screenshots/2024-03-12%20Linux%20X11.png)
 
