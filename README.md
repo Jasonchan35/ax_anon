@@ -1,4 +1,4 @@
-# ax_anon – Procedural Geometry  Editor
+# ax_anon – Game Engine Framework Prototype
 
 ### Objective
 More for personal learning or experiment purpose I did during free time
