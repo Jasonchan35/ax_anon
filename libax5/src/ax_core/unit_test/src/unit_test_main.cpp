@@ -98,7 +98,7 @@ int main() {
 	axError::s_setEnableAssertion(false);
 	ax_core_init();
 
-#if 1
+#if 0
 	run_temp_test();
 #else
 	run_all_test();

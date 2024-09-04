@@ -14,7 +14,7 @@ axRenderMultiGpuBuffer::Buffer* axRenderMultiGpuBuffer::nextBuffer(axRenderReque
 		_bufferIndex = (_bufferIndex + 1) % _maxBufferCount;
 	}
 
-	_buffers.resize(_bufferIndex + 1);
+	_buffers.resize(ax_max(_bufferIndex + 1, _buffers.size()));
 	auto& p = _buffers[_bufferIndex];
 	if (!p.gpuBuffer || p.gpuBuffer->bufferSize() < bufferSize) {
 

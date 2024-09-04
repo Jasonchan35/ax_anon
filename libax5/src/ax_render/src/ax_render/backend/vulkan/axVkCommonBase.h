@@ -8,7 +8,7 @@
 	#include <vulkan/vulkan_win32.h>
 
 	#pragma comment(lib, "vulkan-1.lib")
-	#pragma comment(lib, "VkLayer_utils.lib")
+//	#pragma comment(lib, "VkLayer_utils.lib")
 #endif
 
 #if AX_OS_OSX

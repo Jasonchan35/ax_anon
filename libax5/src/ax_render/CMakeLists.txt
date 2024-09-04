@@ -13,7 +13,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ax_core)
 find_package(mozjpeg REQUIRED)
 
 if(WIN32)
-	set(vulkan_sdk_path "C:/VulkanSDK/1.2.198.1")
+	set(vulkan_sdk_path $ENV{VK_SDK_PATH})
 	target_include_directories(${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Include")
 	target_link_directories(   ${PROJECT_NAME} PUBLIC "${vulkan_sdk_path}/Lib")
 	target_link_libraries(${PROJECT_NAME} PUBLIC vulkan-1)
@@ -21,9 +21,6 @@ if(WIN32)
 else()
 	target_link_libraries(${PROJECT_NAME} PUBLIC mozjpeg::jpeg-static)
 endif()
-
-find_package(Vulkan REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC Vulkan::Vulkan)
 
 find_package(PNG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC PNG::PNG)

@@ -399,9 +399,10 @@ void	axIArray<T>::sort_(CompareFunc func) {
 	// simple sorting, prevent move data if possible
 
 	for (axInt i = 0; i < _size; i++) {
-		axInt m = sliceFrom(i).findMin_(func);
-		if (m == i) continue;
-		ax_swap(at(m), at(i));
+		axInt minIndex = i + sliceFrom(i).findMin_(func);
+		if (minIndex == i) continue;
+		ax_swap(at(minIndex), at(i));
+		minIndex = i;
 	}
 }
 
