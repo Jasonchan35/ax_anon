@@ -176,10 +176,12 @@ void axDirectory::appendGetFileSystemEntries( axIArray<Entry> & result, axStrVie
 		throw axError_Undefined(AX_LOC);
 	}
 
+	axDirectory::Entry e;
+
 	do{
 		auto filename = axStrView_c_str(data.cFileName);
 		if (filename == L"." || filename == L"..") continue;
-		auto& e = result.emplaceBack();
+
 		e.name.setUtf(filename);
 		e.path.set(path);
 		axPath::append(e.path, e.name);
@@ -190,6 +192,13 @@ void axDirectory::appendGetFileSystemEntries( axIArray<Entry> & result, axStrVie
 		if(e.isDir && subDir) {
 			appendGetFileSystemEntries( result, e.name, subDir, filter );
 		}
+
+		if (filter) {
+			if (!filter(e)) continue;
+		}
+
+		result.append(ax_move(e));
+
 	}while(::FindNextFile(h, &data));
 
 	auto err = ::GetLastError();
