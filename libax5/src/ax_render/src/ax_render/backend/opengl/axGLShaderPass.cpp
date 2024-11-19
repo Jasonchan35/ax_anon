@@ -175,6 +175,8 @@ void axGLShaderPass::_initVertexAttrs() {
 	_vertexAttrs.reserve(activeCount);
 	axTempString8 attrName;
 
+	auto filename = shader()->filename();
+
 	for (GLint i = 0; i < activeCount; i++) {
 		GLsizei outLen = 0;
 		GLint   dataSize = 0;
@@ -185,12 +187,12 @@ void axGLShaderPass::_initVertexAttrs() {
 
 		auto loc = glGetAttribLocation(_program, attrName.c_str());
 		if (loc < 0) {
-			AX_LOG("OpenGLShader invalid vertex attr {?}\nfile:{?}", attrName);
+			AX_LOG("OpenGLShader invalid vertex attr {?}\nfile:{?}", attrName, filename);
 		}
 
 		auto attrId = axShaderVertexAttrIdHelper::fromVarName(attrName);
 		if (attrId == VertexAttrId::Unknown) {
-			AX_LOG("OpenGLShader Unknown vertex attr {?}\nfile:{?}", attrName);
+			AX_LOG("OpenGLShader Unknown vertex attr {?}\nfile:{?}", attrName, filename);
 			throw axError_Undefined(AX_LOC);
 		}
 
