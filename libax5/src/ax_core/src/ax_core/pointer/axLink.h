@@ -82,7 +82,8 @@ public:
 
 		auto* dst = outBuf.data();
 		for (auto& e : *this) {
-			*dst = e.ptr();			
+			*dst = e.ptr();
+			dst++;
 		}
 	}
 };

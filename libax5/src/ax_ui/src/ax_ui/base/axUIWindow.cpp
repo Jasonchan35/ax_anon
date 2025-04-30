@@ -49,7 +49,6 @@ public:
 
 	virtual void onActive(bool b) override {
 		Base::onActive(b);
-		_owner->_windowActive = b;
 		_owner->_onWindowActive(b);
 	}
 

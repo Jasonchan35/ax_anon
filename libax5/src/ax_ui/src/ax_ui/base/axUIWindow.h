@@ -32,8 +32,6 @@ protected:
 			void _onWindowActive(bool b);
 
 private:
-	CreateDesc _createDesc;
-
 	class NativeWindow;
 	NativeWindow* _nativeWindow = nullptr;
 	bool	_windowActive : 1;
