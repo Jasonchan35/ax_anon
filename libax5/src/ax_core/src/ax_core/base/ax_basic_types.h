@@ -276,10 +276,6 @@ std::ostream& operator<< (std::ostream& s, const axSourceLoc& loc) {
 	#define	AX_TYPE_LIST_ULONGLONG(...) //not use
 #endif
 
-#define	AX_TYPE_LIST_BOOL(op) \
-	op( bool ) \
-//-----
-
 #define	AX_TYPE_LIST_CHAR_OTHER_THAN_CHAR8(op) \
 	op( axCharW  ) \
 	op( axChar16 ) \

@@ -38,7 +38,7 @@ axDX12Renderer::axDX12Renderer(CreateDesc& desc)
 	hr = CreateDXGIFactory2(dxgiFactoryFlags, IID_PPV_ARGS(_dxgiFactory.ptrForInit()));
 	Util::throwIfError(hr);
 
-	_getHardwareAdpter();
+	_getHardwareAdapter();
 
 	hr = D3D12CreateDevice(_dxgiAdapter, D3D_FEATURE_LEVEL_12_1, IID_PPV_ARGS(_d3dDevice.ptrForInit())); 
 	Util::throwIfError(hr);
@@ -100,7 +100,7 @@ void axDX12Renderer::onGetMemoryInfo(MemoryInfo& info) {
 	info.budget = i.Budget;
 }
 
-void axDX12Renderer::_getHardwareAdpter() {
+void axDX12Renderer::_getHardwareAdapter() {
 	for (UINT i = 0; ; ++i) {
 		axComPtr<IDXGIAdapter1> adapter;
 		auto hr =  _dxgiFactory->EnumAdapters1(i, adapter.ptrForInit());

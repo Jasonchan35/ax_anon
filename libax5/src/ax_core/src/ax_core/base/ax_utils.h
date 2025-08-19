@@ -58,7 +58,7 @@ inline void _ax_assert_impl(const char* title, const char* expr, const char* fun
 //for some basic class cannot include axString otherwise might consider throw exception
 #define AX_ASSERT_MSG(expr, msg)	do{ if (!(expr)) { _AX_ASSERT_ONCE("---- ASSERTION -------", #expr, AX_FUNC_FULLNAME_SZ, __FILE__, __LINE__, msg); } }while(false)
 #define AX_ASSERT(    expr     )	do{ if (!(expr)) { _AX_ASSERT_ONCE("---- ASSERTION -------", #expr, AX_FUNC_FULLNAME_SZ, __FILE__, __LINE__, "" ); } }while(false)
-#define AX_FATAL_ASSERT(expr)		do{ if (!(expr)) { _AX_ASSERT_ONCE("---- FATAL ASSERT ----", #expr, AX_FUNC_FULLNAME_SZ, __FILE__, __LINE__, ""); ax_force_crash() } }while(false)
+#define AX_FATAL_ASSERT(expr)		do{ if (!(expr)) { _AX_ASSERT_ONCE("---- FATAL ASSERT ----", #expr, AX_FUNC_FULLNAME_SZ, __FILE__, __LINE__, ""); ax_force_crash(); } }while(false)
 #define AX_ASSERT_NOT_IMPLEMENTED()	do{                _AX_ASSERT_ONCE("---- ASSERTION -------", "",    AX_FUNC_FULLNAME_SZ, __FILE__, __LINE__, "AX_ASSERT_NOT_IMPLEMENTED"); } while(false)
 
 inline bool _ax_validate_func(bool expr, const char* expr_sz, const char* filename, int lineNumber, const char* msg) {

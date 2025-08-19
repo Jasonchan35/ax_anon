@@ -39,7 +39,6 @@ protected:
 		unlock();
 		if (mutex.tryLock()) {
 			_mutex = &mutex;
-			_mutex->lock();
 			return true;
 		}
 		return false;

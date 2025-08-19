@@ -29,7 +29,7 @@ protected:
 	virtual void onGetMemoryInfo(MemoryInfo& info) override;
 
 private:
-	void _getHardwareAdpter();
+	void _getHardwareAdapter();
 
 	D3D_FEATURE_LEVEL				_d3dFeatureLevel = static_cast<D3D_FEATURE_LEVEL>(0);
 	axComPtr<axDX12_IDXGIFactory>	_dxgiFactory;
